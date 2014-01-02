@@ -42,7 +42,7 @@ local function bruteforce()
 		MsgC(Color(0,255,0), "\nBruteforcing...\n")
 		for k, v in pairs(player.GetAll()) do
 			for _, pin in pairs(pintable) do
-				timer.Simple(tonumber(pin)*.015, function() --thx meepdarkness, keep in mind that multiplication is faster than divison
+				timer.Simple(tonumber(pin)*.015, function() 
 				RunConsoleCommand("rp_atm_withdraw", util.CRC(pin), v:UniqueID(), args[1])
 				if breake == 1 then
 					breake = 0
@@ -71,9 +71,9 @@ local function bruteforce()
 		end
 	end
 
-	concommand.Add("lenny_atmbruteforce_all", bruteforceall) --put amount to withdraw as an argument
+	concommand.Add("lenny_atmbruteforce_all", bruteforceall) 
 
-	concommand.Add("lenny_atmbruteforce_ply", bruteforceply) -- put name, then amount to withdraw as arguments
+	concommand.Add("lenny_atmbruteforce_ply", bruteforceply) 
 
 
 	MsgC(Color(0,255,0), "\nInitialzed!!\n")
@@ -83,7 +83,7 @@ end
 
 
 
-concommand.Add("lenny_atmbruteforce", bruteforce) -- don't want you to lag when you load it 
+concommand.Add("lenny_atmbruteforce", bruteforce) 
 concommand.Add("lenny_realistic_atm_register", function(ply, cmd, args, fullstring)
 	realRegister(unpack(args))
 end)
